@@ -1,5 +1,5 @@
 classes=1
-train=flir_data/train.txt
-valid=flir_data/valid.txt
-names=flir_data/classes.txt
+train=../flir_data/train.txt
+valid=../flir_data/valid.txt
+names=../flir_data/classes.txt
 backup=backup

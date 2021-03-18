@@ -1,0 +1,9 @@
+/home/minhhieu/Desktop/Hieu/FIRFaceDetection/darknet/CMakeFiles/install.dir
+/home/minhhieu/Desktop/Hieu/FIRFaceDetection/darknet/CMakeFiles/list_install_components.dir
+/home/minhhieu/Desktop/Hieu/FIRFaceDetection/darknet/CMakeFiles/rebuild_cache.dir
+/home/minhhieu/Desktop/Hieu/FIRFaceDetection/darknet/CMakeFiles/edit_cache.dir
+/home/minhhieu/Desktop/Hieu/FIRFaceDetection/darknet/CMakeFiles/install/local.dir
+/home/minhhieu/Desktop/Hieu/FIRFaceDetection/darknet/CMakeFiles/darknet.dir
+/home/minhhieu/Desktop/Hieu/FIRFaceDetection/darknet/CMakeFiles/install/strip.dir
+/home/minhhieu/Desktop/Hieu/FIRFaceDetection/darknet/CMakeFiles/uselib.dir
+/home/minhhieu/Desktop/Hieu/FIRFaceDetection/darknet/CMakeFiles/dark.dir

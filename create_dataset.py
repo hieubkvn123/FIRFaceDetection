@@ -28,14 +28,14 @@ for i, file_ in enumerate(label_files):
 
     if(os.path.exists(img_filename)):
         if(i < train_size):
-            train_file.write(img_filename + '\n')
+            train_file.write("../" + img_filename + '\n')
         else:
-            valid_file.write(img_filename + '\n')
+            valid_file.write("../" + img_filename + '\n')
 
 obj_file.write("classes=1\n")
-obj_file.write(f"train={data_dir}/train.txt\n")
-obj_file.write(f"valid={data_dir}/valid.txt\n")
-obj_file.write("names=" + class_file + '\n')
+obj_file.write(f"train=../{data_dir}/train.txt\n")
+obj_file.write(f"valid=../{data_dir}/valid.txt\n")
+obj_file.write("names=../" + class_file + '\n')
 obj_file.write("backup=backup\n")
 
 ### Close files ###
