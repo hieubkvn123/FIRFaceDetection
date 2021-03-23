@@ -1,7 +1,17 @@
 import cv2
+import time
 import numpy as np
 
 from imutils.video import WebcamVideoStream
+from argparse import ArgumentParser
+
+parser = ArgumentParser()
+parser.add_argument('--video', required=False, help="Path to test video")
+args = vars(parser.parse_args())
+if(args['video']):
+    vidSrc = args['video']
+else:
+    vidSrc = 0
 
 labels_path = "flir_data/classes.txt"
 labels      = open(labels_path).read().strip().split("\n")
@@ -20,9 +30,15 @@ COLORS = np.random.randint(0, 255, size=(len(labels), 3), dtype="uint8")
 # pass of the YOLO object detector, giving us our bounding boxes and
 # associated probabilities
 
-vs = WebcamVideoStream(src=0).start()
+vs = WebcamVideoStream(src=vidSrc).start()
 while(True):
     frame = vs.read()
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    frame[:,:,0] = gray
+    frame[:,:,1] = gray
+    frame[:,:,2] = gray
+    if(frame is None): break
+
     H, W, C = frame.shape
 
     blob = cv2.dnn.blobFromImage(frame, 1 / 255.0, (416, 416),
@@ -41,7 +57,8 @@ while(True):
             classID = np.argmax(scores)
             confidence = scores[classID]
 
-            if(confidence > 0.8):
+            if(confidence > 0.2):
+                print(confidence)
                 box = detection[0:4] * np.array([W, H, W, H])
                 (centerX, centerY, width, height) = box.astype("int")
 
